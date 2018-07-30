@@ -18,7 +18,9 @@ require('./authentication').init(app)
 
 app.use(session({
   store: new RedisStore({
-    url: config.redisStore.url
+    host: 'localhost',
+    port: 6379,
+    // url: config.redisStore.url
   }),
   secret: config.redisStore.secret,
   resave: false,

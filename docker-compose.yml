@@ -1,0 +1,13 @@
+# Extends the base docker-compose.yml file for local development
+# Usage: docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d --build ui
+
+version: '3'
+services:
+ 
+  redisdb:
+    container_name: home-health-monitoring-redis
+    image: redis:3.2.4
+    expose:
+      - 6379
+    ports:
+      - 6379:6379
